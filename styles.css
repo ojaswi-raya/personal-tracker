@@ -1,0 +1,628 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+header {
+    background-color: #ffafcc;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav {
+    margin: 15px 0;
+}
+
+nav button {
+    background-color: #ffafcc;
+    border: none;
+    color: #fff;
+    padding: 12px 25px;
+    margin: 0 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background-color: #ffd6e0;
+}
+
+.section {
+    display: none;
+    padding: 25px;
+    margin: 20px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section.active {
+    display: block;
+}
+
+h2 {
+    color: #ffafcc;
+}
+
+/* Introduction Section */
+.intro-content {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-content h3 {
+    font-size: 1.5em;
+    color: #ffafcc;
+}
+
+.intro-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.intro-content li {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.intro-content li strong {
+    color: #ffafcc;
+}
+
+/* Mood Tracker Section */
+#mood-section {
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#mood-section h2 {
+    font-size: 1.8em;
+    color: #F7B5CA; 
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.mood-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px; 
+    margin-bottom: 20px;
+}
+
+.mood-buttons button {
+    background-color: #ffafcc; 
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.mood-buttons button:hover {
+    background-color: #e6447f; /* Lighter teal on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.mood-buttons button:active {
+    background-color: #880535; 
+    transform: scale(1.02); 
+}
+
+#mood-suggestion {
+    font-size: 1.2em;
+    color: #570322; 
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mood-actions {
+    text-align: center;
+}
+
+.mood-actions .action-step {
+    background-color: #eeebec; 
+    border: 1px solid #64092a; 
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.mood-actions .action-step:hover {
+    background-color: #f1d5e0; 
+}
+
+
+
+/* Challenges */
+.form-container {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.form-container button {
+    background-color: #ffafcc;
+    border: none;
+    color: #fff;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #ffd6e0;
+}
+
+.list-container {
+    margin: 20px 0;
+    background-color: #ffd6e0; /* Soft pink background color */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Add padding for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    border: 2px solid #f8b0b4; /* Slightly darker border for definition */
+}
+
+
+.challenge-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.challenge-item input {
+    margin-right: 10px;
+}
+
+.challenge-item button {
+    background-color: #d9534f;
+    border: none;
+    color: #fff;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin-left: auto;
+    transition: background-color 0.3s;
+}
+
+.challenge-item button:hover {
+    background-color: #c9302c;
+}
+
+.progress-bar-container {
+    margin-top: 20px;
+    background-color: #e9ecef;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #ffafcc;
+    width: 0;
+    transition: width 0.4s ease;
+}
+
+/* Daily Routine */
+.routine-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.routine-item button {
+    background-color: #d9534f;
+    border: none;
+    color: #fff;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.routine-item button:hover {
+    background-color: #c9302c;
+}
+
+/* Fitness Tracker */
+.fitness-buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.fitness-buttons button {
+    background-color: #a2d2ff;
+    border: none;
+    color: #fff;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.fitness-buttons button:hover {
+    background-color: #8ab9ff;
+}
+
+.list-container {
+    margin: 20px 0;
+}
+
+.fitness-log-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.fitness-log-item button {
+    background-color: #eb6262;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.fitness-log-item {
+    background-color: #a2d2ff;
+    border: 1px solid #6ab3f8;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fitness-log-item button:hover {
+    background-color: #b71c1c;
+}
+#fitness-results {
+    background-color: #ffffff;
+    border: 1px solid #6ab3f8;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#calories-burned, #sleep-feedback {
+    margin-top: 10px;
+}
+
+#calories-burned span, #sleep-feedback span {
+    font-weight: bold;
+}
+
+
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    max-height:100px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    color: #ffafcc;
+}
+
+/* Gratitude Journal Styles */
+#gratitude-section {
+    background-color: #f0f8ff;
+}
+
+#gratitude-section .form-container input {
+    width: 300px;
+}
+
+#gratitude-section .form-container button {
+    background-color: #f03fe1;
+    color: white;
+}
+
+#gratitude-list div {
+    background-color: #e6f7ff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Water Intake Tracker Styles */
+#water-section {
+    background-color: #f5f5f5;
+}
+
+#water-section .form-container input {
+    width: 150px;
+}
+
+#water-section .form-container button {
+    background-color: #FF8A8A;
+    color: white;
+}
+
+#water-log div {
+    background-color: #e6f7ff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+#water-input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: calc(100% - 22px);
+    margin-bottom: 10px;
+}
+
+#total-water {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+/* Daily Affirmations Styles */
+#affirmations-section {
+    background-color: #f0f8ff;
+}
+
+#affirmations-section button {
+    background-color: #FF8A8A;
+    color: white;
+}
+
+#affirmation-display {
+    background-color: #e6f7ff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Meal Planner Styles */
+#meal-planner {
+    background-color: #eebfd0;
+    border: 1px solid #eb246d;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#meal-form {
+    margin-bottom: 20px;
+}
+
+#meal-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#meal-form input, #meal-form select, #meal-form button {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+#meal-form button {
+    background-color: #FF8A8A;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#meal-form button:hover {
+    background-color: #e72b2b;
+}
+
+#meal-list {
+    display: flex;
+    flex-direction: column;
+}
+
+#meal-list h4 {
+    background-color: #FFC6C6;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0 5px;
+}
+
+#meal-list div {
+    background-color: #FFEBD4;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.meal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #c8e6c9;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.meal-item button {
+    background-color: #FF8A8A;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.meal-item button:hover {
+    background-color: #ec2f2f;
+}
+
+
+/* Pomodoro Timer Styles */
+#pomodoro-section {
+    background-color: #f0f8ff;
+}
+
+.timer-controls {
+    margin-bottom: 20px;
+}
+
+.timer-controls button {
+    background-color: #FF8A8A;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.timer-controls button:hover {
+    background-color: #fc3c3c;
+}
+
+#pomodoro-timer {
+    font-size: 2em;
+    margin-top: 10px;
+}
+/* Goal Setting Styles */
+#goal-section {
+    background-color: #f5f5f5;
+}
+
+#goal-section .form-container input {
+    width: 300px;
+}
+
+#goal-section .form-container button {
+    background-color: #FF8A8A;
+    color: white;
+}
+
+#goal-list div {
+    background-color: #e6f7ff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Expense Tracker Styles */
+#expense-section {
+    background-color: #f0f8ff;
+}
+
+#expense-section .form-container input {
+    width: 150px;
+}
+
+#expense-section .form-container button {
+    background-color: #FF8A8A;
+    color: white;
+}
+
+#expense-list div {
+    background-color: #e6f7ff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#total-expense {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #ffafcc;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-top: 1px solid #fff;
+    font-size: 0.9em;
+}

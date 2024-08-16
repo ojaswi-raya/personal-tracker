@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Tracker</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Personal Tracker</h1>
+        <nav>
+            <button onclick="showSection('intro')">Introduction</button>
+            <button onclick="showSection('mood-section')">Mood Tracker</button>
+            <button onclick="showSection('challenge-section')">Challenges</button>
+            <button onclick="showSection('routine-section')">Daily Routine</button>
+            <button onclick="showSection('fitness-section')">Fitness Tracker</button>
+            <button onclick="showSection('gratitude-section')">Gratitude Journal</button>
+            <button onclick="showSection('water-section')">Water Intake Tracker</button>
+            <button onclick="showSection('affirmations-section')">Daily Affirmations</button>
+            <button onclick="showSection('meal-planner')">Meal Planner</button>
+            <button onclick="showSection('pomodoro-section')">Pomodoro Timer</button>
+            <button onclick="showSection('goal-section')">Goal Setting</button>
+            <button onclick="showSection('expense-section')">Expense Tracker</button>
+        </nav>
+    </header>
+
+    <!-- Introduction Section -->
+    <section id="intro" class="section active">
+        <h2>Welcome to Your Personal Tracker!</h2>
+        <p>Hello there! 🎉 We’re excited to have you here. This platform is designed to help you stay organized, motivated, and on track with your daily activities.</p>
+        <div class="intro-content">
+            <h3>What You Can Do:</h3>
+            <ul>
+                <li><strong>Daily Routine:</strong> Plan and manage your tasks effectively. Set times and priorities to keep your day structured and productive.</li>
+                <li><strong>Fitness Tracker:</strong> Log your workouts, track various fitness activities, and monitor your progress. From swimming to jogging, we've got it covered!</li>
+                <li><strong>Challenges:</strong> Add, track, and complete personal challenges. Watch your progress and celebrate your achievements as you go!</li>
+                <li><strong>Mood Tracker:</strong> Reflect on your mood and receive personalized suggestions to improve your day. Whether you're happy, sad, or neutral, we've got tips for you!</li>
+                <li><strong>Gratitude Journal:</strong> Record daily reflections on what you're thankful for. Enhance your mindset and positivity by acknowledging the good in your life.</li>
+                <li><strong>Water Intake:</strong> Track your daily water consumption to stay hydrated. Set reminders and see your progress towards your hydration goals.</li>
+                <li><strong>Daily Affirmation:</strong> Receive uplifting and motivational affirmations to boost your confidence and positivity each day.</li>
+                <li><strong>Meal Planner:</strong> Plan and organize your meals for the week. Make grocery lists, track nutritional information, and ensure a balanced diet.</li>
+                <li><strong>Expense Planner:</strong> Manage your finances by tracking income, expenses, and budgeting. Stay on top of your spending and save more effectively.</li>
+                <li><strong>Goal Setting:</strong> Define, track, and achieve your personal and professional goals. Break down your goals into actionable steps and monitor your progress.</li>
+                <li><strong>Pomodoro Timer:</strong> Use the Pomodoro Technique to enhance your productivity. Focus on tasks in intervals and take regular breaks to maintain efficiency.</li>
+            </ul>            
+        </div>
+    </section>
+
+    <!-- Mood Tracker -->
+    <section id="mood-section" class="section">
+        <h2>Mood Tracker</h2>
+        <div class="mood-buttons">
+            <button onclick="setMood('happy')">😊 Happy</button>
+            <button onclick="setMood('sad')">😢 Sad</button>
+            <button onclick="setMood('neutral')">😐 Neutral</button>
+        </div>
+        <div id="mood-suggestion"></div>
+        <div id="mood-actions" class="mood-actions"></div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section id="challenge-section" class="section">
+        <h2>Challenges</h2>
+        <div id="challenge-form" class="form-container">
+            <input type="text" id="challenge-input" placeholder="Add a new challenge...">
+            <button onclick="addChallenge()">Add Challenge</button>
+        </div>
+        <div id="challenge-list" class="list-container"></div>
+        <div id="progress-bar-container" class="progress-bar-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+    </section>
+
+    <!-- Daily Routine Section -->
+    <section id="routine-section" class="section">
+        <h2>Daily Routine</h2>
+        <div id="routine-form" class="form-container">
+            <input type="time" id="time-input" placeholder="Set Time">
+            <input type="text" id="task-input" placeholder="Add a new task...">
+            <button onclick="addRoutine()">Add Task</button>
+        </div>
+        <div id="routine-list" class="list-container"></div>
+    </section>
+
+    <!-- Fitness Tracker Section -->
+    <section id="fitness-section" class="section">
+        <h2>Fitness Tracker</h2>
+        <div id="fitness-buttons" class="fitness-buttons">
+            <button onclick="openModal('Swimming')">🏊‍♂️ Swimming</button>
+            <button onclick="openModal('Cycling')">🚴‍♂️ Cycling</button>
+            <button onclick="openModal('Jogging')">🏃‍♂️ Jogging</button>
+            <button onclick="openModal('Workout')">💪 Workout</button>
+            <button onclick="openModal('Sleep')">😴 Sleep</button>
+        </div>
+        <div id="fitness-log" class="list-container"></div>
+        <div id="fitness-results">
+            <h3>Fitness Tracker Results</h3>
+            <div id="calories-burned"></div>
+            <div id="sleep-feedback"></div>
+        </div>
+    </section>
+
+    <!-- Modal for Adding Fitness Time -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title"></h3>
+            <input type="number" id="time-input-modal" placeholder="Enter time in hours">
+            <button onclick="addFitnessActivity()">Add Time</button>
+        </div>
+    </div>
+
+    <!-- Gratitude Journal -->
+    <section id="gratitude-section" class="section">
+        <h2>Gratitude Journal</h2>
+        <div class="form-container">
+            <input type="text" id="gratitude-input" placeholder="Enter something you're grateful for">
+            <button onclick="addGratitude()">Add</button>
+        </div>
+        <div id="gratitude-list"></div>
+    </section>
+
+    <!-- Water Intake Tracker -->
+    <section id="water-section" class="section">
+        <h2>Water Intake Tracker</h2>
+        <div class="form-container">
+            <input type="number" id="water-input" placeholder="Amount (in liters)" step="0.01">
+            <button onclick="logWater()">Log Water</button>
+        </div>
+        <div id="water-log">
+            <h3>Total Water Intake</h3>
+            <div id="total-water">0 liters</div>
+        </div>
+    </section>
+
+
+    <!-- Daily Affirmations -->
+    <section id="affirmations-section" class="section">
+        <h2>Daily Affirmations</h2>
+        <button onclick="getAffirmation()">Get Affirmation</button>
+        <div id="affirmation-display"></div>
+    </section>
+
+    <!-- Meal Planner -->
+    <section id="meal-planner" class="section">
+        <h3>Meal Planner</h3>
+        <form id="meal-form">
+            <label for="meal-type">Meal Type:</label>
+            <select id="meal-type">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snack">Snack</option>
+                <option value="other">Other</option>
+            </select>
+            <label for="meal-description">Meal Description:</label>
+            <input type="text" id="meal-description" placeholder="e.g., Grilled Chicken Salad">
+            <button type="button" onclick="addMeal()">Add Meal</button>
+        </form>
+        <div id="meal-list">
+            <h4>Breakfast</h4>
+            <div id="breakfast-list"></div>
+            <h4>Lunch</h4>
+            <div id="lunch-list"></div>
+            <h4>Dinner</h4>
+            <div id="dinner-list"></div>
+            <h4>Snack</h4>
+            <div id="snack-list"></div>
+            <h4>Other</h4>
+            <div id="other-list"></div>
+        </div>
+    </section>
+
+    <!-- Pomodoro Timer -->
+    <section id="pomodoro-section" class="section">
+        <h2>Pomodoro Timer</h2>
+        <div class="timer-controls">
+            <button onclick="startPomodoro()">Start Pomodoro</button>
+            <button onclick="stopPomodoro()">Stop Pomodoro</button>
+            <button onclick="resetPomodoro()">Reset Pomodoro</button>
+        </div>
+        <div id="pomodoro-timer">25:00</div>
+    </section>
+
+    <!-- Goal Setting -->
+    <section id="goal-section" class="section">
+        <h2>Goal Setting</h2>
+        <div class="form-container">
+            <input type="text" id="goal-input" placeholder="Enter your goal">
+            <button onclick="addGoal()">Add Goal</button>
+        </div>
+        <div id="goal-list"></div>
+    </section>
+
+    <!-- Expense Tracker -->
+    <section id="expense-section" class="section">
+        <h2>Expense Tracker</h2>
+        <div class="form-container">
+            <input type="text" id="expense-description" placeholder="Expense description">
+            <input type="number" id="expense-amount" placeholder="Amount">
+            <button onclick="addExpense()">Add Expense</button>
+        </div>
+        <div id="expense-list"></div>
+        <div id="total-expenses">
+            <h3>Total Expenses</h3>
+            <div id="total-amount">$0.00</div>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
