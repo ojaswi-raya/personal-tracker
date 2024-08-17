@@ -2,7 +2,6 @@
 Personal Tracker is an all-in-one application designed to streamline and enhance daily life management. It offers a range of features to help users stay organized, motivated, and healthy, including:
 
 1)Daily Routine: Plan and manage tasks with priorities and scheduled times.
-
 2)Fitness Tracker: Log workouts and monitor fitness activities.
 3)Challenges: Set, track, and achieve personal challenges. 
 4)Mood Tracker: Reflect on mood and receive improvement suggestions.
